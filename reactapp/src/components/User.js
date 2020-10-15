@@ -7,13 +7,12 @@ import PropTypes from 'prop-types'
         isVisible: false
     }
 
-    // constructor(props){
-    //     super(props);
+    
+    
 
-    //     this.state = {
-    //         isVisible: false
-    //     }
-    // }
+    onClickEvent = (number,e) => {
+        console.log(number);
+    }
 
     render() {
 
@@ -25,7 +24,7 @@ import PropTypes from 'prop-types'
             <div className="col-md-8 mb-4">
                 <div className="card">
                     <div className="card-header d-flex justify-content-between">
-                        <h3 className="d-inline">{name}</h3>
+                        <h3 className="d-inline" onClick = {this.onClickEvent.bind(this,34)}>{name}</h3>
                         <i className="far fa-trash-alt" style= {{cursor: "pointer"}}></i>
                     </div>
                     {
