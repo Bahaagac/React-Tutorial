@@ -11,7 +11,9 @@ import PropTypes from 'prop-types'
     
 
     onClickEvent = (number,e) => {
-        console.log(number);
+        this.setState({
+            isVisible : !this.state.isVisible
+        });
     }
 
     render() {
