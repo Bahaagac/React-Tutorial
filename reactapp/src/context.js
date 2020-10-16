@@ -12,6 +12,11 @@ const reducer = (state,action) => {
             }
         default:
             return state
+        case "ADD_USER" :
+            return {
+                ...state,
+                users : [...state.users,action.payload]
+            }
     }
 }
 
@@ -21,19 +26,19 @@ export class UserProvider extends Component {
 
         users: [
           {
-            id: 1,
+            id: "unique-1",
             name : "Person Name 1",
             salary : "Xk",
             department : "Engineering"
           },
           {
-            id: 2,
+            id: "unique-2",
             name : "Person Name 2",
             salary : "yk",
             department : "Marketing"
           },
           {
-            id:31,
+            id: "unique-3",
             name : "Person Name 3",
             salary : "zk",
             department : "Sales"

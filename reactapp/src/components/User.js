@@ -33,9 +33,9 @@ import UserConsumer from "../context";
                     const {dispatch} = value;
 
                      return (
-                            <div className="col-md-8 mb-4">
-                                <div className="card">
-                                    <div className="card-header d-flex justify-content-between">
+                            <div className="col-md-8 mb-4" >
+                                <div className="card" >
+                                    <div className="card-header d-flex justify-content-between" style = {isVisible ? {backgroundColor : "#62848d", transition: "0.5s", color: "white"}  : null}>
                                         <h3 className="d-inline" onClick = {this.onClickEvent.bind(this,34)}>{name}</h3>
                                         
                                         <i onClick = {this.onDeleteUser.bind(this,dispatch)} className="far fa-trash-alt" style= {{cursor: "pointer"}}></i>
@@ -43,7 +43,7 @@ import UserConsumer from "../context";
                                     {
                                         isVisible ?
                                         <div className="card-body">
-                                            <p className="card-text">Department : {department}</p>   
+                                            <p className="card-text" >Department : {department}</p>   
                                             <p className="card-text">Salary : {salary}</p>    
                                         </div> : null
                                     }
@@ -69,7 +69,7 @@ User.propTypes = {
     name : PropTypes.string.isRequired,
     salary : PropTypes.string.isRequired,
     department : PropTypes.string.isRequired,
-    id : PropTypes.number.isRequired
+    id : PropTypes.string.isRequired
 }
 
 export default User;
