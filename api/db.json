@@ -1,0 +1,22 @@
+{
+    "users" : [
+        {
+            "id": "unique-1",
+            "name" : "Person Name 1",
+            "salary" : "Xk",
+            "department" : "Engineering"
+          },
+          {
+            "id": "unique-2",
+            "name" : "Person Name 2",
+            "salary" : "yk",
+            "department" : "Marketing"
+          },
+          {
+            "id": "unique-3",
+            "name" : "Person Name 3",
+            "salary" : "zk",
+            "department" : "Sales"
+          }
+    ]
+}
