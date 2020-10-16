@@ -21,7 +21,10 @@ const Animation = posed.div({
 class AddUser extends Component {
 
     state = {
-        visible : false
+        visible : false,
+        name : "",
+        department : "",
+        salary : "",
     }
 
     changeVisibility = (e) => {
@@ -29,9 +32,31 @@ class AddUser extends Component {
             visible : !this.state.visible
         })
     };
- 
+
+    changeInput = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+    // changeName = (e) => {
+    //     this.setState({
+    //         name : e.target.value
+    //     })
+    // }
+
+    // changeDepartment = (e) => {
+    //     this.setState({
+    //         department : e.target.value
+    //     })
+    // }
+
+    // changeSalary = (e) => {
+    //     this.setState({
+    //         salary : e.target.value
+    //     })
+    // }
     render() {
-        const {visible} = this.state
+        const {visible,name,salary,department} = this.state
         return (
             <div className="col-md-8 mb-4">
                 <button onClick = {this.changeVisibility} className="btn btn-dark btn-block mb-2">{visible ? "Hide Form" : "Show Form"}</button>
@@ -42,32 +67,41 @@ class AddUser extends Component {
                             <h3>Add User Form</h3>
                         </div>
                         <div className="card-body">
+                            
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="name">Name</label>
                                     <input type="text" 
-                                    name="name"
-                                    id="id"
-                                    placeholder="Enter Name"
-                                    className="form-control">
+                                        name="name"
+                                        id="id"
+                                        placeholder="Enter Name"
+                                        className="form-control"
+                                        value = {name}
+                                        onChange = {this.changeInput}>
                                     </input>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="department">Department</label>
                                     <input type="text" 
-                                    name="department"
-                                    id="department"
-                                    placeholder="Enter Department"
-                                    className="form-control">
+                                        name="department"
+                                        id="department"
+                                        placeholder="Enter Department"
+                                        className="form-control"
+                                        value = {department}
+                                        onChange = {this.changeInput}>
+
                                     </input>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="salary">Salary</label>
                                     <input type="text" 
-                                    name="salary"
-                                    id="salary"
-                                    placeholder="Enter Salary"
-                                    className="form-control">
+                                        name="salary"
+                                        id="salary"
+                                        placeholder="Enter Salary"
+                                        className="form-control"
+                                        value = {salary}
+                                        onChange = {this.changeInput}>
+
                                     </input>
                                 </div>
                                 <button className="btn btn-danger btn-block" type="submit">Add User</button>
