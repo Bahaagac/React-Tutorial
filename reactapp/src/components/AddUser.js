@@ -1,10 +1,42 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import posed from 'react-pose';
 
- class AddUser extends Component {
+const Animation = posed.div({
+    visible: { 
+        opacity : 1,
+        applyAtStart : {
+            display : "block"
+        }
+    },
+    hidden : {
+        opacity : 0,
+        applyAtEnd : {
+            display : "none",
+
+        }
+    
+    }
+});
+
+class AddUser extends Component {
+
+    state = {
+        visible : false
+    }
+
+    changeVisibility = (e) => {
+        this.setState({
+            visible : !this.state.visible
+        })
+    };
+ 
     render() {
+        const {visible} = this.state
         return (
             <div className="col-md-8 mb-4">
-
+                <button onClick = {this.changeVisibility} className="btn btn-dark btn-block mb-2">{visible ? "Hide Form" : "Show Form"}</button>
+                    
+                    <Animation pose = { visible ? "visible" : "hidden"}>
                     <div className="card">
                         <div className="card-header">
                             <h3>Add User Form</h3>
@@ -42,7 +74,7 @@ import React, { Component } from 'react'
                             </form>
                         </div>
                     </div>
-                
+                </Animation>
             </div>
         )
     }
