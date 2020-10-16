@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
     onClickEvent = (number,e) => {
         this.setState({
             isVisible : !this.state.isVisible
-        });
+        })
     }
 
     render() {
